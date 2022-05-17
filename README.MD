@@ -1,5 +1,5 @@
-# COA Deploy Ansible with GitHub UseCase. 
-# -- How to build ansible pipeline with GitHub Action  --
+# Using Ansible with GitHub Actions. 
+# -- How to build an ansible GitHub Action pipeline --
 
 ## ✅ Showcase
 
