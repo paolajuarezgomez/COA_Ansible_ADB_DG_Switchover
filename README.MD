@@ -45,7 +45,7 @@ The operation in this repo consist in run a manual backup for our ATP.
 
 1) Pre-configuration. 
 * In order to do this we will use the playbook COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml included in this repo.
-* Add your secrets and create a new **./vault/vault_backup.yaml** file with ansible-vault. 
+* Add your secrets and create a new **./vault/vault_backup.yaml** file with ansible-vault. For more information check **COA_Ansible_ADB/ansible/vault/README.MD** file 
 * Add you variables in the **./variables/var_backup.yaml** file.
 * Create a new branch, add the content of the **COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
 
@@ -63,6 +63,13 @@ The operation in this repo consist in run a manual backup for our ATP.
 * When you approve the merge, the "ansible deploy" pipeline will be automatically launch.
 
 ![tabactions](images/8.png)
+
+1) Run-Backup 
+* In order to do this we will use the playbook COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml included in this repo.
+* Add your secrets and create a new **./vault/vault_backup.yaml** file with ansible-vault. For more information check **COA_Ansible_ADB/ansible/vault/README.MD** file 
+* Add you variables in the **./variables/var_backup.yaml** file.
+* Create a new branch, add the content of the **COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
+
 
 * If we review the tab "actions" , we can check our two workflows
 
