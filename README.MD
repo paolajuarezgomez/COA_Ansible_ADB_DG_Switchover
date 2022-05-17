@@ -41,12 +41,13 @@ VAULT_PASSWORD
 * Add your bastion ip in the **COA_Ansible_ADB/ansible/hosts** file
 * Go to settings of your repo, and active the use of workflows.(*Settings-> Actions-> General-> Allow all actions and reusable workflows*)
 
-* The operation in this repo consist in run a manual backup for our ATP.
-* Firts we need to do a preconfiguration. In order to do this we will use the playbook. ( COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml )
+The operation in this repo consist in run a manual backup for our ATP.
 
-* Review if the playbook uses any vault file, if is needed you need to encrypt the content of the file using ansible-vault.  
-
-* Create a new branch, add the content of the COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml file in ./ansible/playbook.yaml file and commit the changes.
+1) Pre-configuration. 
+* In order to do this we will use the playbook COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml included in this repo.
+* Add your secrets and create a new **./vault/vault_backup.yaml** file with ansible-vault. 
+* Add you variables in the **./variables/var_backup.yaml** file.
+* Create a new branch, add the content of the **COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
 
 * Open a "merge pull request" and check how the first  pipeline run:
 ![tabactions](images/1.png)
