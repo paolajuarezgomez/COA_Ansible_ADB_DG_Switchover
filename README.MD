@@ -14,7 +14,7 @@ During this UseCase we're going to:
 * Run gitops operations in an ATP workload using ansible playbooks.
 * We´ll use a host bastion as ansible [control node](https://docs.ansible.com/ansible/2.5/network/getting_started/basic_concepts.html#control-node)
 
-![tabactions](images/Diagram.png)
+![tabactions](images/Diagram_Ansible.png)
 
 
 ## ✅ Usage
