@@ -42,11 +42,11 @@ VAULT_PASSWORD
 * Go to settings of your repo, and active the use of workflows.(*Settings-> Actions-> General-> Allow all actions and reusable workflows*)
 
 * The operation in this repo consist in run a manual backup for our ATP.
-* Firts we need to do a preconfiguration. In order to do this we will use the playbook.
+* Firts we need to do a preconfiguration. In order to do this we will use the playbook. ( COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml )
 
 * Review if the playbook uses any vault file, if is needed you need to encrypt the content of the file using ansible-vault.  
 
-* Create a new branch, review the different playbooks examples in /ansible/playbooks , copy the content os the choose operation in ./ansible/playbook.yaml and publish the changes to the new branch. 
+* Create a new branch, add the content of the COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml file in ./ansible/playbook.yaml file and commit the changes.
 
 * Open a "merge pull request" and check how the first  pipeline run:
 ![tabactions](images/1.png)
