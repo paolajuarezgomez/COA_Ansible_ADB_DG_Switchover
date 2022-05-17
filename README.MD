@@ -41,7 +41,7 @@ VAULT_PASSWORD
 * Add your bastion ip in the **COA_Ansible_ADB/ansible/hosts** file
 * Go to settings of your repo, and active the use of workflows.(*Settings-> Actions-> General-> Allow all actions and reusable workflows*)
 
-The operation in this repo consist in run a manual backup for our ATP.
+## The operation defined in the playbooks will run a manual backup in our ATP.
 
 1) Pre-configuration. 
 * Create a new branch.
