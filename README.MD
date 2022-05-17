@@ -37,7 +37,7 @@ SSH_PRIVATE_KEY
 VAULT_PASSWORD
 ````
 
-* The pipelines/workflows configuration are defined in the directory **.github/workflows**, in this case we have created two different workdlows: **LintAnsible.yaml and **DeployAnsible.yaml**
+* The pipelines/workflows configuration are defined in the directory **.github/workflows**, in this case we have created two different workdlows: **LintAnsible.yaml** and **DeployAnsible.yaml**
 * Go to settings of your repo, and active the use of workflows.(*Settings-> Actions-> General-> Allow all actions and reusable workflows*)
 
 * Create a new branch, review the different playbooks examples in /ansible/playbooks , copy the content os the choose operation in ./ansible/playbook.yaml and publish the changes to the new branch. 
