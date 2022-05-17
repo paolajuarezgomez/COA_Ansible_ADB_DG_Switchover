@@ -69,7 +69,7 @@ VAULT_PASSWORD
 * Create a new branch.
 * In order to do this we will use the playbook COA_Ansible_ADB/ansible/playbooks/playbook_runBackup.yaml included in this repo.
 * Add you variables in the **./variables/var_run_backup.yaml** file.
-* Add the content of the **COA_Ansible_ADB/ansible/playbooks/playbook_runBackup.yaml ** file in **./ansible/playbook.yaml** file and commit the changes.
+* Add the content of the **COA_Ansible_ADB/ansible/playbooks/playbook_runBackup.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
 * Open a "merge pull request" and check how the first  pipeline run.
 * * After review the Ansible pipeline (CD) outcome, you can go and confirm the merge. (pull requests-> request)
 * When you approve the merge, the "ansible deploy" pipeline will be automatically launch.
