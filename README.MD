@@ -44,10 +44,11 @@ VAULT_PASSWORD
 The operation in this repo consist in run a manual backup for our ATP.
 
 1) Pre-configuration. 
+* Create a new branch.
 * In order to do this we will use the playbook COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml included in this repo.
 * Add your secrets and create a new **./vault/vault_backup.yaml** file with ansible-vault. For more information check **COA_Ansible_ADB/ansible/vault/README.MD** file 
 * Add you variables in the **./variables/var_backup.yaml** file.
-* Create a new branch, add the content of the **COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
+* Add the content of the **COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
 
 * Open a "merge pull request" and check how the first  pipeline run:
 ![tabactions](images/1.png)
@@ -59,17 +60,19 @@ The operation in this repo consist in run a manual backup for our ATP.
 ![tabactions](images/4.png)
 
 ![tabactions](images/6.png)
-* After review the test pipeline (ansible lint) outcome, you can go and confirm the merge. (pull requests-> request)
-* When you approve the merge, the "ansible deploy" pipeline will be automatically launch.
+* After review the test pipeline (CI) outcome, you can go and confirm the merge. (pull requests-> request)
+* When you approve the merge, the "ansible lint" pipeline will be automatically launch.
 
 ![tabactions](images/8.png)
 
-1) Run-Backup 
-* In order to do this we will use the playbook COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml included in this repo.
-* Add your secrets and create a new **./vault/vault_backup.yaml** file with ansible-vault. For more information check **COA_Ansible_ADB/ansible/vault/README.MD** file 
-* Add you variables in the **./variables/var_backup.yaml** file.
-* Create a new branch, add the content of the **COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
-
+2) Run-Backup 
+* Create a new branch.
+* In order to do this we will use the playbook COA_Ansible_ADB/ansible/playbooks/playbook_runBackup.yaml included in this repo.
+* Add you variables in the **./variables/var_run_backup.yaml** file.
+* Add the content of the **COA_Ansible_ADB/ansible/playbooks/playbook_runBackup.yaml ** file in **./ansible/playbook.yaml** file and commit the changes.
+* Open a "merge pull request" and check how the first  pipeline run.
+* * After review the Ansible pipeline (CD) outcome, you can go and confirm the merge. (pull requests-> request)
+* When you approve the merge, the "ansible deploy" pipeline will be automatically launch.
 
 * If we review the tab "actions" , we can check our two workflows
 
