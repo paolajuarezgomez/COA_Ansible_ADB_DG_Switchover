@@ -28,7 +28,7 @@
   become_method: sudo
   become_user: root
   ansible.builtin.command: 
-  oci db autonomous-database switchover --autonomous-database-id  {{ local_standby_database_id }} 
+  oci db autonomous-database switchover --autonomous-database-id  {{ primary_database_id }} 
   register: client3
   changed_when: client3.rc != 0
 - name: Print copy oci cli switchover
