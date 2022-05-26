@@ -1,5 +1,4 @@
-# Using Ansible with GitHub Actions. 
-# -- How to build an ansible GitHub Action pipeline --
+# Using Ansible with GitHub Actions to automate switchover ATP operations
 
 ## ✅ Showcase
 
@@ -65,14 +64,25 @@ VAULT_PASSWORD
 
 ![tabactions](images/8.png)
 
-2) Run-Backup 
+2) switchover
+
+If an environment with a local standby and a cross-region standby there will be two different operations.
+
+To swithcover to the local standby:
 * Create a new branch.
-* In order to do this we will use the playbook COA_Ansible_ADB/ansible/playbooks/playbook_runBackup.yaml included in this repo.
-* Add you variables in the **./variables/var_run_backup.yaml** file.
-* Add the content of the **COA_Ansible_ADB/ansible/playbooks/playbook_runBackup.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
+* Copy the content of the **COA_Ansible_ADB_DG_Switchover/ansible/playbooks/.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
 * Open a "merge pull request" and check how the first  pipeline run.
 * * After review the Ansible pipeline (CD) outcome, you can go and confirm the merge. (pull requests-> request)
 * When you approve the merge, the "ansible deploy" pipeline will be automatically launch.
+
+To swithcover to the remote standby:
+* Create a new branch.
+* Copy the content of the **COA_Ansible_ADB_DG_Switchover/ansible/playbooks/.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
+* Complete the proper value for the variables.
+* Open a "merge pull request" and check how the first  pipeline run.
+* * After review the Ansible pipeline (CD) outcome, you can go and confirm the merge. (pull requests-> request)
+* When you approve the merge, the "ansible deploy" pipeline will be automatically launch.
+
 
 * If we review the tab "actions" , we can check our two workflows
 
