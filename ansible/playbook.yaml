@@ -1,10 +1,7 @@
- - hosts: bastion  
-   vars:
+- hosts: bastion  
+  vars:
      primary_database_id: ocid1.autonomousdatabase.oc1.uk-london-1.anwgiljtttkvkkia3embye4qchj6hi35sbl3naqsmomj6tl7dt4qs4nae7ea
- 
-   tasks:
-    
-   - name: include tasks
-     ansible.builtin.include_tasks:   
-      file: ./tasks/local_switch.yaml
-     
+     remote_database_id: ocid1.autonomousdatabase.oc1.eu-frankfurt-1.antheljtttkvkkia7zktwcou6w6z64gxdzychut656s6okgsukegow42tpua
+
+  tasks:   
+   - import_tasks: ./tasks/remote_switch.yaml
