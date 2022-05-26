@@ -1,1 +1,36 @@
 
+- name: copy config file
+  become: true
+  become_method: sudo
+  become_user: root
+  ansible.builtin.copy:
+    src: ../vault/config
+    dest: /root/.oci/config
+    mode: u=rw
+  register: client1
+- name: Print copy config file
+  ansible.builtin.debug:
+    var: client1
+- name: copy api key file
+  become: true
+  become_method: sudo
+  become_user: root
+  ansible.builtin.copy:
+    src: ../vault/oci_api_key.pem
+    dest: /root/.oci/oci_api_key.pem
+    mode: u=rw
+  register: client2
+- name: Print copy config file
+  ansible.builtin.debug:
+    var: client2
+- name: run backup
+  become: true
+  become_method: sudo
+  become_user: root
+  ansible.builtin.command: 
+  oci db autonomous-database switchover --autonomous-database-id  {{ your_local_standby_database_id }} 
+  register: client3
+  changed_when: client3.rc != 0
+- name: Print copy oci cli switchover
+  ansible.builtin.debug:
+    var: client3
