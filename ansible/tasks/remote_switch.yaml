@@ -22,7 +22,7 @@
 - name: Print copy config file
   ansible.builtin.debug:
     var: client2
-- name: run backup
+- name: run cross-region switchover
   become: true
   become_method: sudo
   become_user: root
