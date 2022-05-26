@@ -1,6 +1,6 @@
 - hosts: bastion  
   vars:
-     dbhome_id: ee5bb069-0d73-498b-b671-61b7e5d45d6c
+     primary_database_id: ocid1.autonomousdatabase.oc1.uk-london-1.anwgiljtttkvkkia3embye4qchj6hi35sbl3naqsmomj6tl7dt4qs4nae7ea
 
   tasks:   
    - import_tasks: ./tasks/local_switch.yaml
