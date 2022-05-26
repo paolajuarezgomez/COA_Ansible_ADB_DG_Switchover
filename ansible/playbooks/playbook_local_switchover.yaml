@@ -1,6 +1,6 @@
 - hosts: bastion  
-  tasks:
-   - name: include variables
-     include_vars: ./variables/var_run_backup.yaml
-   
+  vars:
+     dbhome_id: ee5bb069-0d73-498b-b671-61b7e5d45d6c
+
+  tasks:   
    - import_tasks: ./tasks/local_switch.yaml
