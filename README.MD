@@ -31,6 +31,7 @@ SSH_PRIVATE_KEY
 ````
 
 * Add also the *VAULT_PASSWORD* as another secret varible in github. Read the readme.md included in ansible/vault to see more information related to encryp files with ansible-vault.
+* Create **config** an **config_dr** file in the vault directory. Read the Readme in 
 
 ````
 VAULT_PASSWORD
