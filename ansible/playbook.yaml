@@ -6,5 +6,5 @@
     
    - name: include tasks
      ansible.builtin.include_tasks:   
-     file: ./tasks/local_switch.yaml
+      file: ./tasks/local_switch.yaml
      
