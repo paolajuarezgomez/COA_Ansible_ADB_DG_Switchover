@@ -1,9 +1,7 @@
-- hosts: bastion  
-  tasks:
-   - name: include variables
-     ansible.builtin.include_vars: 
-      file: ./variables/var_run_backup.yaml
-   - name: include tasks
-     ansible.builtin.include_tasks: 
-      file: ./tasks/run_Backup.yaml
+ - hosts: bastion  
+   vars:
+     primary_database_id: ocid1.autonomousdatabase.oc1.uk-london-1.anwgiljtttkvkkia3embye4qchj6hi35sbl3naqsmomj6tl7dt4qs4nae7ea
+
+   ansible.builtin.include_tasks:   
+   file: ./tasks/local_switch.yaml
      
