@@ -40,44 +40,20 @@ VAULT_PASSWORD
 * Add your bastion ip in the **COA_Ansible_ADB/ansible/hosts** file
 * Go to settings of your repo, and active the use of workflows.(*Settings-> Actions-> General-> Allow all actions and reusable workflows*)
 
-## The operation defined in the playbooks will run a manual backup in our ATP.
-
-1) Pre-configuration. 
-* Create a new branch.
-* In order to do this we will use the playbook COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml included in this repo.
-* Add your secrets and create a new **./vault/vault_backup.yaml** file with ansible-vault. For more information check **COA_Ansible_ADB/ansible/vault/README.MD** file 
-* Add you variables in the **./variables/var_backup.yaml** file.
-* Add the content of the **COA_Ansible_ADB/ansible/playbooks/playbook_confBackup.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
-
-* Open a "merge pull request" and check how the first  pipeline run:
-![tabactions](images/1.png)
-![tabactions](images/2.png)
-
-![tabactions](images/3.png)
-![tabactions](images/7.png)
-
-![tabactions](images/4.png)
-
-![tabactions](images/6.png)
-* After review the test pipeline (CI) outcome, you can go and confirm the merge. (pull requests-> request)
-* When you approve the merge, the "ansible lint" pipeline will be automatically launch.
-
-![tabactions](images/8.png)
-
-2) switchover
+## Switchover
 
 If an environment with a local standby and a cross-region standby there will be two different operations.
 
 To swithcover to the local standby:
 * Create a new branch.
-* Copy the content of the **COA_Ansible_ADB_DG_Switchover/ansible/playbooks/.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
+* Copy the content of the **COA_Ansible_ADB_DG_Switchover/ansible/playbooks/playbook_local_switchover.yaml.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
 * Open a "merge pull request" and check how the first  pipeline run.
 * * After review the Ansible pipeline (CD) outcome, you can go and confirm the merge. (pull requests-> request)
 * When you approve the merge, the "ansible deploy" pipeline will be automatically launch.
 
 To swithcover to the remote standby:
 * Create a new branch.
-* Copy the content of the **COA_Ansible_ADB_DG_Switchover/ansible/playbooks/.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
+* Copy the content of the **COA_Ansible_ADB_DG_Switchover/ansible/playbooks/playbook_remote_switchover.yaml.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
 * Complete the proper value for the variables.
 * Open a "merge pull request" and check how the first  pipeline run.
 * * After review the Ansible pipeline (CD) outcome, you can go and confirm the merge. (pull requests-> request)
