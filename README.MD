@@ -41,22 +41,24 @@ VAULT_PASSWORD
 * Go to settings of your repo, and active the use of workflows.(*Settings-> Actions-> General-> Allow all actions and reusable workflows*)
 
 ## Switchover
-
 If an environment with a local standby and a cross-region standby there will be two different operations.
 
 To swithcover to the local standby:
 * Create a new branch.
-* Copy the content of the **COA_Ansible_ADB_DG_Switchover/ansible/playbooks/playbook_local_switchover.yaml.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
+* Copy the content of the **COA_Ansible_ADB_DG_Switchover/ansible/playbooks/playbook_local_switchover.yaml.yaml** file in **./ansible/playbook.yaml** file 
+* Complete the proper value for the variable  **primary_database_id** 
+* Commit the changes
 * Open a "merge pull request" and check how the first  pipeline run.
-* * After review the Ansible pipeline (CD) outcome, you can go and confirm the merge. (pull requests-> request)
+* After review the Ansible pipeline (CD) outcome, you can go and confirm the merge. (pull requests-> request)
 * When you approve the merge, the "ansible deploy" pipeline will be automatically launch.
 
 To swithcover to the remote standby:
 * Create a new branch.
-* Copy the content of the **COA_Ansible_ADB_DG_Switchover/ansible/playbooks/playbook_remote_switchover.yaml.yaml** file in **./ansible/playbook.yaml** file and commit the changes.
-* Complete the proper value for the variables.
+* Copy the content of the **COA_Ansible_ADB_DG_Switchover/ansible/playbooks/playbook_remote_switchover.yaml.yaml** file in **./ansible/playbook.yaml** file 
+* Complete the proper value for **primary_database_id** and **cross_region_standby_database_id** variables.
+* Commit the changes
 * Open a "merge pull request" and check how the first  pipeline run.
-* * After review the Ansible pipeline (CD) outcome, you can go and confirm the merge. (pull requests-> request)
+* After review the Ansible pipeline (CD) outcome, you can go and confirm the merge. (pull requests-> request)
 * When you approve the merge, the "ansible deploy" pipeline will be automatically launch.
 
 
